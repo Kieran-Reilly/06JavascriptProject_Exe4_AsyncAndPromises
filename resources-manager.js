@@ -1,34 +1,41 @@
-import {Main} from "./index.js";
+import {ViewModel} from "./src/index.js";
 
+/**
+ * Handles data management
+ */
 export class ResourcesManager{
 
     /**
      * Responsible for the fetching of data and hands it back to the caller
-     * @param {sting} fileName - A string referencing the file nme holding the data to be retrieved
-     * @returns {Promise<string>} fetchedData - a promise is returned containing the requested data
+     * @param {array} fileArray - an array containing the file paths to be fetched and extracted
+     * @returns {Promise<[]>} fetchedDataArray - an array containing the strings of data from the fetched files
      */
-    async fetchResource(fileName){
-        let fetchedData = await fetch(fileName)
-            .then((result) => result.text())
-            .then((data) => {
-                return data
-            });
-        return fetchedData;
+    async fetchResource(fileArray){
+
+        let fetchedDataArray = [];
+        for (let i = 0; i < fileArray.length; i++) {
+            await fetch(fileArray[i])
+                .then(result => result.text())
+                .then(data => {
+                    fetchedDataArray.push(data);
+                });
+        }
+        console.log("Data retrieved:", fetchedDataArray);
+        return fetchedDataArray;
     }
 
     /**
      * Responsible for taking in data and constructing a template literal
-     * @param {array} data - ana array of retrieved string values
-     * @returns {string} outputText - a complete formatted string literal is returned
+     * @param {array} data - a string array that makes up the contents of the template literal
+     * @returns {string} outputText - the constructed template literal ready to be inserted into the DOM
      */
     constructTemplateLiteral(data){
-        console.log("Data retrieved");
         let outputText = ``;
         for (let i = 0; i < data.length; i++) {
             outputText = `${outputText}\n${data[i]}`;
         }
+        console.log("Template Literal constructed:", outputText);
         return outputText;
     }
-
 }
 

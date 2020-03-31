@@ -1,42 +1,24 @@
-# CRS Starters
+# 06 Javascript Project - Exercise 4
+
+## Async/Await & Promises
 
 ## Introduction
 
-This is a small template project to help with library development.
-It includes all the required building blocks already set up ready to use.
-There are a couple of conventions to consider.
-
-1. Source code is in the "src folder"
-1. Tests have the same name as the src file but also includes ".test" at the end of the name. For example "my-class.test.js"
-1. index.js found in the src folder is the bundling entry and exports the library api using the export function
-
-## Standard features included
-
-1. Jest tests configured for ES6
-1. Rollup bundling with minification using Tensor
-1. Build publish folder
+Within this project I implemented asynchronous functions making use of Async/Await and Promises.
  
-## Scripts
+## Brief
 
-The package.json file has two scripts defined for common use.
+Download three text files, combine their content and console log out the result. Need to ensure:
+1. Async download the three text files using Fetch API.
+2. Once all the files are downloaded combine them into a template literal
+3. Write the result to the DOM so that the browser will render the downloaded content.
 
-1. Test
-1. Bundle
-1. Publish
+Exercising separation of concerns and have async functions that:
+1. download the files and construct the result text
+2. write the result text to the document
 
-## Tests
+The three files should be downloaded at the same time.
+The result should only be constructed once all the files have been downloaded.
 
-Jest is set up to allow es6 using Babel.  
-It also includes code completion.
-
-## Publish
-
-Use the publish node script to bundle your files and copy them to the publish folder.  
-The following files will automatically be copied to the publish folder:
-
-1. All your files located in the dist folder
-1. package.json file with the version number updated
-1. readme.md
-
-If you want other files to be included, update "distribute" function in the /build/publish.js file.
-
+## Further Implementation
+I further made use of Document Fragments as well as using `<article>` & `<section>` tags

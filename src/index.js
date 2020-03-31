@@ -1,6 +1,7 @@
 // import files you want part of your library here.
-import {MyClass} from "./my-class.js"
+import {ViewModel} from "./view-model.js"
 
 
 // export your api here.
-export {MyClass}
+export {ViewModel}
+

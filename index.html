@@ -8,12 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Fetching Data Using Async/Await and Promises</h1>
-    <button id="fetchText" >Fetch Text</button>
-    <p id="resultsParagraph"></p>
+    <section id="headerSection">
+        <h1>Fetching Data Using Async/Await and Promises</h1>
+        <button id="fetchText" >Fetch Text</button>
+    </section>
+    <section id="outputSections"></section>
 
     <script type="module">
-        import "./index.js";
+        import {ViewModel} from "./src/index.js";
+        let viewModel = new ViewModel();
     </script>
 </body>
 </html>

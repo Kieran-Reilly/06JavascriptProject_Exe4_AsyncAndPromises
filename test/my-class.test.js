@@ -1,9 +1,9 @@
-import {MyClass} from "../src/my-class.js";
+import {ViewModel} from "../src/view-model.js";
 
 let instance;
 
 beforeEach(() => {
-    instance = new MyClass();
+    instance = new ViewModel();
 });
 
 afterEach(() => {
