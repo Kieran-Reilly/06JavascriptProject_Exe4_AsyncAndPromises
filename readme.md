@@ -22,3 +22,6 @@ The result should only be constructed once all the files have been downloaded.
 
 ## Further Implementation
 I further made use of Document Fragments as well as using `<article>` & `<section>` tags
+
+## Practiced Understanding
+In order to develop an understanding of Promises and Async/Await, located under the `lessons` folder are various js files displaying different examples of concepts used within this project.
